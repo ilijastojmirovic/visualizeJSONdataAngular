@@ -1,0 +1,12 @@
+# This file prevents large or unnecessary files from being copied into the Docker context.
+
+# Node build artifacts and dependencies
+/node_modules
+/dist
+npm-debug.log
+
+# Git and IDE/editor configuration
+.git
+.gitignore
+.editorconfig
+.vscode
