@@ -1,0 +1,31 @@
+<div class="container py-4">
+  <h2 class="mb-4 text-center">Employee Work Hours</h2>
+
+  <div class="table-responsive mb-5">
+    <table class="table table-bordered table-striped text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>Name</th>
+          <th>Total Hours</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of entries" [ngClass]="{ 'table-danger': emp.totalHours < 100 }">
+          <td>{{ emp.employee }}</td>
+          <td>{{ emp.totalHours | number: '1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card shadow-sm p-3">
+    <h2 class="text-center">Work Hours Distribution</h2>
+    <canvas baseChart
+            [data] = "{ labels: pieChartLabels, datasets: [{ data: pieChartData }] }"
+            type="pie"
+            [options]="pieChartOptions"
+            [plugins]="[ChartDataLabels]"
+            class="chart chart-pie">
+    </canvas>
+  </div>
+</div>
