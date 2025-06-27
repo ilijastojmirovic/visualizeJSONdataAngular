@@ -20,12 +20,16 @@
 
   <div class="card shadow-sm p-3">
     <h2 class="text-center">Work Hours Distribution</h2>
-    <canvas baseChart
-            [data] = "{ labels: pieChartLabels, datasets: [{ data: pieChartData }] }"
-            type="pie"
-            [options]="pieChartOptions"
-            [plugins]="[ChartDataLabels]"
-            class="chart chart-pie">
-    </canvas>
+
+    <div class="chart-container">
+      <canvas baseChart
+              [data]="{ labels: pieChartLabels, datasets: [{ data: pieChartData }] }"
+              type="pie"
+              [options]="pieChartOptions"
+              [plugins]="[ChartDataLabels]"
+              class="chart chart-pie">
+      </canvas>
+    </div>
+    
   </div>
 </div>

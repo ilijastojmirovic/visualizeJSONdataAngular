@@ -22,6 +22,7 @@ export class TimeEntryTableComponent implements OnInit{
   public ChartDataLabels = ChartDataLabels;
   pieChartOptions: ChartOptions<'pie'> = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'bottom',
